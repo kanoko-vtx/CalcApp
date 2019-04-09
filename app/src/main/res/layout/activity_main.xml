@@ -5,36 +5,26 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:id="@+id/rootlayout"
         android:orientation="vertical"
         tools:context=".MainActivity">
 
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
         <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="数字を入力"
+                android:inputType="numberDecimal"
                 android:id="@+id/textbox1"/>
 
-    </LinearLayout>
+        <!-- android:hint="数字を入力" -->
 
-    <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
 
         <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:hint="数字を入力"
-                android:id="@+id/textbox2"/>
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:id="@+id/textbox2"/>
 
-    </LinearLayout>
+        <!-- android:hint="数字を入力" -->
 
     <LinearLayout
             android:layout_width="match_parent"

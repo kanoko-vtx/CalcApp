@@ -1,13 +1,12 @@
 package kanoko.akira.techacademy.calcapp
 
-import android.content.DialogInterface
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
-import android.widget.EditText
 import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_main.*
+import android.support.design.widget.Snackbar
+import android.util.Log
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -26,6 +25,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         val anserView: TextView = findViewById(R.id.anser)
 
+        // textbox1.2が空だったら警告
+        if (textbox1.text.isNotBlank() and textbox2.text.isNotBlank()) {
+
+        }else{
+            val Snackbar = Snackbar.make(rootlayout, "数字を入力してください", Snackbar.LENGTH_LONG)
+            Snackbar.show()
+        }
+
         when(v.id){
             R.id.plus -> {
                 anserView.text = "足す"
@@ -39,10 +46,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.divide -> {
                 anserView.text = "割る"
             }
-
         }
-
-
 
     }
 
