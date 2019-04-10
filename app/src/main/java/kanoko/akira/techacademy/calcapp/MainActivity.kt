@@ -56,6 +56,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     if (input2double == 0.0) {
                         val Snackbar = Snackbar.make(rootlayout, "input2には0以外の数字を入力してください", Snackbar.LENGTH_LONG)
                         Snackbar.show()
+                        return
                     } else {
                         val r = input1double / input2double
                         Log.d("calclog","割る $input1double - $input2double = $r")
