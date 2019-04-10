@@ -1,12 +1,12 @@
 package kanoko.akira.techacademy.calcapp
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_main.*
 import android.support.design.widget.Snackbar
-import android.support.v7.widget.VectorEnabledTintResources
 import android.util.Log
 import android.widget.EditText
 
@@ -64,6 +64,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 }
             }
 
+            // 画面遷移
+            val intent = Intent(this, SecondActivity::class.java)
+            intent.putExtra("VALUE1", anserView.text.toString())
+            val value1 = anserView.text.toString()
+            Log.d("calclog", "$value1")
+            startActivity(intent)
+
         } catch (e: Exception) {
             // input1,2が空白だったらアラート表示
             if (input1.text.isEmpty() or input2.text.isEmpty()) {
@@ -71,5 +78,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 Snackbar.show()
             }
         }
+
     }
 }
