@@ -13,7 +13,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="numberDecimal"
-                android:id="@+id/textbox1"/>
+                android:hint="input1"
+                android:id="@+id/input1"/>
 
         <!-- android:hint="数字を入力" -->
 
@@ -22,7 +23,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="numberDecimal"
-                    android:id="@+id/textbox2"/>
+                    android:hint="input2"
+                    android:id="@+id/input2"/>
 
         <!-- android:hint="数字を入力" -->
 

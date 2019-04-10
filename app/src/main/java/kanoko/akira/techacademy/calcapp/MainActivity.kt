@@ -23,37 +23,53 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(v: View) {
-        val anserView: TextView = findViewById(R.id.anser)
-        val num1edittext1 = findViewById<EditText>(R.id.textbox1)
-        val num1 = num1edittext1.text.toString().toInt()
-        val num1edittext2 = findViewById<EditText>(R.id.textbox2)
-        val num2 = num1edittext2.text.toString().toInt()
 
-        // num2が0だったら警告
+        // input1,2が空白だったらアラート表示
+        // input2が0だったらアラート
+        if (input1.text.isEmpty() or input2.text.isEmpty()) {
+            val Snackbar = Snackbar.make(rootlayout, "数字を入力してください", Snackbar.LENGTH_LONG)
+            Snackbar.show()
+        } else {
+            if (input2.text.toString().toInt() == 0) {
+                val Snackbar = Snackbar.make(rootlayout, "input2には0以外の数字を入力してください", Snackbar.LENGTH_LONG)
+                Snackbar.show()
+            }
+        }
+
+//        val anserView: TextView = findViewById(R.id.anser)
+
+//        val input1str :EditText = findViewById(R.id.input1) as EditText
+//        val num1 = input1str.text.toString().toDouble()
+
+//        val input2str :EditText = findViewById(R.id.input2) as EditText
+//        val num2 = input2str.text.toString().toDouble()
 
         // textbox1.2が空だったら警告
 
-        if (textbox1.text.isNotBlank() or textbox2.text.isNotBlank()) {
-
-        }else{
-            val Snackbar = Snackbar.make(rootlayout, "数字を入力してください", Snackbar.LENGTH_LONG)
-            Snackbar.show()
-        }
-
         when(v.id){
             R.id.plus -> {
-                val r = num1 + num2
-                Log.d("calclog","$num1, $num2, $r")
-                anserView.text = getString(r)
+//                val r = num1 + num2
+//                Log.d("calclog","$num1,$num2,$r")
+                Log.d("calclog","足す")
+//                anserView.text = r.toString()
             }
             R.id.minus -> {
-                anserView.text = "引く"
+//                val r = num1 - num2
+//                Log.d("calclog","$num1,$num2,$r")
+                Log.d("calclog","引く")
+//                anserView.text = r.toString()
             }
             R.id.multiply -> {
-                anserView.text = "掛ける"
+//                val r = num1 * num2
+//                Log.d("calclog","$num1,$num2,$r")
+            Log.d("calclog","掛ける")
+//                anserView.text = r.toString()
             }
             R.id.divide -> {
-                anserView.text = "割る"
+//                val r = num1 / num2
+//                Log.d("calclog","$num1,$num2,$r")
+            Log.d("calclog","割る")
+//                anserView.text = r.toString()
             }
         }
 
